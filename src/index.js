@@ -1,16 +1,11 @@
-import React, { Component } from 'react';
+// @flow
+import React from 'react';
 import ReactDOM from 'react-dom';
+import App from './App';
+import './style/index.css';
 
-type Props = { message: string };
+const root = document.getElementById('root');
 
-class App extends Component<Props> {
-  render() {
-    const { message } = this.props;
-    return <div>{message}</div>;
-  }
+if (root) {
+  ReactDOM.render(<App />, root);
 }
-
-ReactDOM.render(
-  <App message="Hello, world!" />,
-  document.getElementById('root'),
-);

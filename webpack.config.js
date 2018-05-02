@@ -20,6 +20,12 @@ module.exports = {
         loader: 'babel-loader',
         exclude: /node_modules/,
       },
+      {
+        test: /\.css$/,
+        include: path.resolve(__dirname, 'src'),
+        use: [{ loader: 'style-loader' }, { loader: 'css-loader' }],
+        exclude: /node_modules/,
+      },
     ],
   },
 };
