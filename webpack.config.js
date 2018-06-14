@@ -1,16 +1,20 @@
 const path = require('path');
+const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const WorkboxPlugin = require('workbox-webpack-plugin');
+
+const env = 'development';
 
 module.exports = {
-  mode: 'development',
+  mode: env,
   devtool: 'cheap-module-eval-source-map',
-  entry: ['babel-polyfill', path.join(__dirname, 'src', 'index.js')],
-  devServer: {
-    contentBase: path.join(__dirname, 'dist'),
-    port: 3000,
+  entry: {
+    main: ['babel-polyfill', path.join(__dirname, 'src', 'index.js')],
   },
   output: {
-    filename: 'app.bundle.js',
+    filename: '[name].[chunkhash].js',
     path: path.resolve(__dirname, 'dist'),
+    chunkFilename: '[name].[chunkhash].bundle.js',
   },
   module: {
     rules: [
@@ -27,5 +31,26 @@ module.exports = {
         exclude: /node_modules/,
       },
     ],
+  },
+  devServer: {
+    contentBase: path.join(__dirname, 'dist'),
+    port: 3000,
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      title: 'Demo Application',
+      template: 'index.html',
+    }),
+    new WorkboxPlugin.GenerateSW({
+      clientsClaim: true,
+      skipWaiting: true,
+    }),
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': JSON.stringify(env),
+    }),
+  ],
+  externals: {
+    react: 'React',
+    'react-dom': 'ReactDOM',
   },
 };
