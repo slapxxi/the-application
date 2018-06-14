@@ -1,28 +1,17 @@
-import React, { Component } from 'react';
-import glamorous from 'glamorous';
+// @flow
+import React from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 type Props = {};
 
-class App extends Component<Props> {
-  ref: Object;
-
-  constructor(props) {
-    super(props);
-    this.ref = React.createRef();
-  }
-
-  componentDidMount() {
-    const node: HTMLElement = this.ref.current;
-    console.log(node.getBoundingClientRect());
-  }
-
+class App extends React.Component<Props> {
   render() {
-    return <Container innerRef={this.ref}>Hello, World!</Container>;
+    return (
+      <Router>
+        <div>noop</div>
+      </Router>
+    );
   }
 }
-
-const Container = glamorous.div({
-  padding: 10,
-});
 
 export default App;
