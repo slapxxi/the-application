@@ -4,7 +4,7 @@
 
 The point of this document is to explain changes occurring in the codebase over time. The whole point of this folder is to keep me organized and thinking about this project in terms of writing.
 
-The general rule of thumb is to not change important parts of the codebase without explaining it here first.
+The rule of thumb is not to change important parts of the codebase without explaining it here.
 
 More on testing could be found in [“Testing”](Testing.md).
 
