@@ -7,7 +7,9 @@
   "scripts": {
     "build": "webpack",
     "start": "webpack-dev-server",
-    "test": "jest --watch"
+    "test": "jest --watch",
+    "test:acceptance": "cypress run",
+    "cypress": "cypress open"
   },
   "keywords": ["react", "spa", "frontend", "js"],
   "author": "Slava Pavlutin",
@@ -39,8 +41,10 @@
     "babel-plugin-transform-regenerator": "^6.26.0",
     "babel-preset-env": "^1.7.0",
     "css-loader": "^0.28.11",
+    "cypress": "^3.0.1",
     "eslint": "^4.19.1",
     "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-cypress": "^2.0.1",
     "eslint-plugin-import": "^2.12.0",
     "eslint-plugin-jest": "^21.17.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
@@ -74,12 +78,13 @@
   "eslintConfig": {
     "parser": "babel-eslint",
     "extends": "airbnb",
-    "plugins": ["jest"],
+    "plugins": ["jest", "cypress"],
     "env": {
       "browser": true,
       "jest": true,
       "node": true,
-      "worker": true
+      "worker": true,
+      "cypress/globals": true
     },
     "rules": {
       "arrow-parens": [0],

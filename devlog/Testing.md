@@ -1,10 +1,15 @@
 # Testing
 
-- [ ] Setup end to end testing with Puppeteer
+- [x] Setup acceptance testing with Cypress
 
 We want to test our application to make sure it works as expected.
 
-We use [Jest](https://facebook.github.io/jest/) as a testing framework of choice because it’s designed to work effectively with React codebases and it’s one of the best testing frameworks available in general.
+For unit and integration tests we use [Jest](https://facebook.github.io/jest/) since it provides perfect React support in addition to its excellent performance and extra features such as snapshots.
 
-To test features of the application from users’ perspective we use [Puppeteer](https://pptr.dev). We don’t use [Cypress](https://www.cypress.io) because of the rigid structure it imposes on testing framework. That is, we can’t use Jest matchers to test the behavior of the application. We’d like to use a single testing framework instead of a bunch of various tools with different APIs. Puppeteer provides a set of its onw APIs of course but it doesn’t depend on any testing framework, which makes it a good choice for us.
+For acceptance tests we use [Cypress](https://cypress.io). Cypress provides additional features for end to end testing. Cypress makes it easier to write, launch, and maintain acceptance tests than Jest does since Cypress’s designed for it. It even records videos of test runs! 
+
+To avoid displaying ESLint errors in Cypress tests, we install an [ESLint plugin for Cypress](https://github.com/cypress-io/eslint-plugin-cypress) and configure it to include globals supported by Cypress.
+
+The first problem with Cypress is that it displays an origin error when visiting `localhost`. It seems the reason behind that is React Router modifying `window.location.href`. To avoid this problem, we’ve set `chromeWebSecurity` to `false` in [`cypress.json`](../cypress.json).
+
 
