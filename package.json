@@ -8,8 +8,15 @@
     "build": "webpack",
     "start": "webpack-dev-server",
     "test": "jest --watch",
+    "test:once": "jest",
     "test:acceptance": "cypress run",
-    "cypress": "cypress open"
+    "flow": "flow",
+    "prettier":
+      "prettier --arrow-parens=always --print-width=70 --single-quote --trailing-comma=all --write \"{src,devlog}/**/*.{js,md}\"",
+    "eslint": "eslint src/**/*.js",
+    "cypress": "cypress open",
+    "precommit":
+      "npm run prettier && npm run eslint && npm run test:once && npm run flow"
   },
   "keywords": ["react", "spa", "frontend", "js"],
   "author": "Slava Pavlutin",
@@ -51,8 +58,10 @@
     "eslint-plugin-react": "^7.9.1",
     "flow-bin": "^0.74.0",
     "html-webpack-plugin": "^3.2.0",
+    "husky": "^0.14.3",
     "jest": "^23.1.0",
     "jest-emotion": "^9.2.2",
+    "prettier": "^1.13.5",
     "react-testing-library": "^3.1.7",
     "style-loader": "^0.21.0",
     "webpack": "^4.12.0",
