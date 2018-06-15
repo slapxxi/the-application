@@ -6,17 +6,17 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack",
-    "start": "webpack-dev-server",
-    "test": "jest --watch",
-    "test:once": "jest",
-    "test:acceptance": "cypress run",
-    "flow": "flow",
-    "prettier":
-      "prettier --arrow-parens=always --print-width=70 --single-quote --trailing-comma=all --write \"{src,devlog}/**/*.{js,md}\"",
-    "eslint": "eslint src/**/*.js",
     "cypress": "cypress open",
-    "precommit":
-      "npm run prettier && npm run eslint && npm run test:once && npm run flow"
+    "eslint": "eslint",
+    "flow": "flow",
+    "lint-staged": "lint-staged",
+    "start": "webpack-dev-server",
+    "test:watch": "jest --watch",
+    "test:acceptance": "cypress run",
+    "test": "jest",
+    "prettier":
+      "prettier --arrow-parens=always --print-width=70 --single-quote --trailing-comma=all --write",
+    "precommit": "npm run lint-staged && npm test"
   },
   "keywords": ["react", "spa", "frontend", "js"],
   "author": "Slava Pavlutin",
@@ -61,6 +61,7 @@
     "husky": "^0.14.3",
     "jest": "^23.1.0",
     "jest-emotion": "^9.2.2",
+    "lint-staged": "^7.2.0",
     "prettier": "^1.13.5",
     "react-testing-library": "^3.1.7",
     "style-loader": "^0.21.0",
@@ -83,6 +84,10 @@
   },
   "jest": {
     "setupTestFrameworkScriptFile": "./src/setupTests.js"
+  },
+  "lint-staged": {
+    "*.{js,md,css}": ["npm run prettier --", "git add"],
+    "*.js": ["npm run eslint --", "npm run flow --"]
   },
   "eslintConfig": {
     "parser": "babel-eslint",
