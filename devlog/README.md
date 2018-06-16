@@ -8,5 +8,6 @@ Here I also keep track of the long term and short term tasks. They usually appea
 
 There are the following sections:
 
-- [“Features”](features/README.md) describes features of the application and the process of their development.
+- [“Features”](Features.md) describes features of the application and the process of their development.
 - [“Workflow”](Workflow.md) describes how we organize our work to remain productive.
+- [“Architecture”](Architecture.md) describes how we build the application so it’s easy to maintain and extend. In addition, it’s where we describe technology and architecture choices.
