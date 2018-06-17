@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`accepts \`theme\` prop 1`] = `
+.emotion-0 {
+  max-width: 45em;
+  text-overflow: ellipsis;
+  font-size: 15px;
+  line-height: 1.6;
+  color: black;
+}
+
+<p
+  class="emotion-0 emotion-1"
+>
+  text
+</p>
+`;
+
+exports[`renders 1`] = `
+.emotion-0 {
+  max-width: 45em;
+  text-overflow: ellipsis;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+<p
+  class="emotion-0 emotion-1"
+>
+  sample text
+</p>
+`;

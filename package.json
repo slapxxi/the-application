@@ -8,7 +8,7 @@
     "build": "webpack",
     "cypress": "cypress open",
     "eslint": "eslint",
-    "flow": "flow",
+    "flow": "flow check",
     "lint-staged": "lint-staged",
     "start": "webpack-dev-server",
     "test:watch": "jest --watch",
@@ -16,7 +16,7 @@
     "test": "jest",
     "prettier":
       "prettier --arrow-parens=always --print-width=70 --single-quote --trailing-comma=all --write",
-    "precommit": "npm run lint-staged && npm test"
+    "precommit": "npm run lint-staged && npm run flow && npm test"
   },
   "keywords": ["react", "spa", "frontend", "js"],
   "author": "Slava Pavlutin",
@@ -27,6 +27,7 @@
     "emotion": "^9.2.3",
     "glamor": "^2.20.40",
     "lodash": "^4.17.10",
+    "polished": "^1.9.2",
     "puppeteer": "^1.5.0",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
@@ -87,7 +88,7 @@
   },
   "lint-staged": {
     "*.{js,md,css}": ["npm run prettier --", "git add"],
-    "*.js": ["npm run eslint --", "npm run flow --"]
+    "*.js": ["npm run eslint --"]
   },
   "eslintConfig": {
     "parser": "babel-eslint",

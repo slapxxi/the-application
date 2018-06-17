@@ -3,6 +3,6 @@ import { render } from 'react-testing-library';
 import App from './App';
 
 it('renders', () => {
-  const { debug } = render(<App />);
-  debug();
+  const { container } = render(<App />);
+  expect(container).not.toBeUndefined();
 });
