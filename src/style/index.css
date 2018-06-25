@@ -4,8 +4,3 @@ body {
   font-family: Roboto, sans-serif;
   font-weight: normal;
 }
-
-::selection {
-  background-color: yellow;
-  color: black;
-}

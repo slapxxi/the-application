@@ -6,10 +6,11 @@ const theme = {
   colors: {
     heading: colors.midnightexpress,
     text: colors.paynegrey,
-    button: colors.geraldine,
-    buttonActive: setLightness(0.4, colors.geraldine),
-    buttonText: lighten(0.9, colors.geraldine),
-    buttonTextActive: lighten(0.8, colors.geraldine),
+    button: colors.watermelon,
+    buttonActive: setLightness(0.4, colors.watermelon),
+    buttonText: lighten(0.9, colors.watermelon),
+    buttonTextActive: lighten(0.8, colors.watermelon),
+    headerText: colors.spunpearl,
   },
 };
 
