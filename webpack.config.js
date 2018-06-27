@@ -7,10 +7,16 @@ const env = 'development';
 
 module.exports = {
   mode: env,
-  devtool: 'cheap-module-eval-source-map',
-  entry: {
-    main: ['babel-polyfill', path.join(__dirname, 'src', 'index.js')],
+  // devtool: 'cheap-module-eval-source-map',
+  resolve: {
+    extensions: ['.js', '.json', '.ts', '.tsx'],
   },
+  entry: './src/index.tsx',
+  //   {main: [
+  //     'babel-polyfill',
+  //     path.join(__dirname, 'src', 'index.tsx'),
+  //   ],
+  // },
   output: {
     filename: '[name].[chunkhash].js',
     path: path.resolve(__dirname, 'dist'),
@@ -19,10 +25,8 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.js$/,
-        include: path.resolve(__dirname, 'src'),
-        loader: 'babel-loader',
-        exclude: /node_modules/,
+        test: /\.(t|j)sx$/,
+        use: 'ts-loader',
       },
       {
         test: /\.css$/,
@@ -30,6 +34,12 @@ module.exports = {
         use: [{ loader: 'style-loader' }, { loader: 'css-loader' }],
         exclude: /node_modules/,
       },
+      // {
+      //   test: /\.js$/,
+      //   include: path.resolve(__dirname, 'src'),
+      //   loader: 'babel-loader',
+      //   exclude: /node_modules/,
+      // },
     ],
   },
   devServer: {

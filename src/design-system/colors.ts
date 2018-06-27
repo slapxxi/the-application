@@ -1,8 +1,9 @@
-// @flow
 const colors = {
   coralcandy: '#f3cecb',
   deluge: '#7c76a4',
   geraldine: '#fe5b55',
+  grey: '#556',
+  lightgrey: '#aab',
   midnightexpress: '#21263a',
   mischka: '#a9a1b9',
   paua: '#2a2551',

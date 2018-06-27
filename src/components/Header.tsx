@@ -1,8 +1,7 @@
-// @flow
-import React from 'react';
+import * as React from 'react';
 import styled from 'react-emotion';
 import { Link } from 'react-router-dom';
-import { theme } from '../design-system';
+import { theme } from '../design-system/index';
 
 function Header() {
   return (

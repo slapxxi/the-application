@@ -2,12 +2,13 @@
 
 exports[`accepts \`disabled\` prop 1`] = `
 .emotion-0 {
-  display: inline-block;
-  padding: 15px;
-  border: 0;
-  border-radius: 2px;
-  font-size: 15px;
+  padding: px;
+  border: 1px solid;
+  border-radius: 4px;
+  font-size: px;
   font-weight: 500;
+  line-height: 0;
+  vertical-align: middle;
   cursor: pointer;
 }
 
@@ -24,7 +25,7 @@ exports[`accepts \`disabled\` prop 1`] = `
 }
 
 <button
-  class="emotion-0 emotion-1"
+  class="emotion-0"
   disabled=""
 >
   button
@@ -33,14 +34,16 @@ exports[`accepts \`disabled\` prop 1`] = `
 
 exports[`accepts \`theme\` prop 1`] = `
 .emotion-0 {
-  display: inline-block;
-  padding: 15px;
-  border: 0;
-  border-radius: 2px;
+  padding: px;
+  border: 1px solid black;
   background: black;
-  font-size: 15px;
+  border-radius: 4px;
+  font-size: px;
   font-weight: 500;
   color: white;
+  fill: white;
+  line-height: 0;
+  vertical-align: middle;
   cursor: pointer;
 }
 
@@ -48,6 +51,7 @@ exports[`accepts \`theme\` prop 1`] = `
   -webkit-transform: translateY(1px);
   -ms-transform: translateY(1px);
   transform: translateY(1px);
+  border-color: white;
   background: white;
   color: black;
 }
@@ -59,7 +63,7 @@ exports[`accepts \`theme\` prop 1`] = `
 }
 
 <button
-  class="emotion-0 emotion-1"
+  class="emotion-0"
 >
   button
 </button>
@@ -67,12 +71,13 @@ exports[`accepts \`theme\` prop 1`] = `
 
 exports[`renders 1`] = `
 .emotion-0 {
-  display: inline-block;
-  padding: 15px;
-  border: 0;
-  border-radius: 2px;
-  font-size: 15px;
+  padding: px;
+  border: 1px solid;
+  border-radius: 4px;
+  font-size: px;
   font-weight: 500;
+  line-height: 0;
+  vertical-align: middle;
   cursor: pointer;
 }
 
@@ -89,7 +94,7 @@ exports[`renders 1`] = `
 }
 
 <button
-  class="emotion-0 emotion-1"
+  class="emotion-0"
 >
   button
 </button>

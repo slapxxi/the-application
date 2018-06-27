@@ -1,4 +1,3 @@
-// @flow
 const typography = {
   heading: {
     family: 'Roboto Slab, Geogia, serif',
@@ -11,7 +10,7 @@ const typography = {
     family: 'Roboto, Helvetica, sans-serif',
     lineheight: 1.6,
     linewidth: 50,
-    size: 15,
+    size: 16,
     weight: 'normal',
   },
 };

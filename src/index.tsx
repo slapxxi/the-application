@@ -1,8 +1,7 @@
 /* eslint no-console: [0] */
-// @flow
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
+import * as React from 'react';
+import * as ReactDOM from 'react-dom';
+import * as App from './App';
 import './style/index.css';
 
 window.addEventListener('load', () => {

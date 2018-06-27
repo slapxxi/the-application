@@ -2,7 +2,6 @@
 
 exports[`accepts \`theme\` prop 1`] = `
 .emotion-0 {
-  max-width: 45em;
   text-overflow: ellipsis;
   font-size: 15px;
   line-height: 1.6;
@@ -10,7 +9,7 @@ exports[`accepts \`theme\` prop 1`] = `
 }
 
 <p
-  class="emotion-0 emotion-1"
+  class="emotion-0"
 >
   text
 </p>
@@ -18,14 +17,13 @@ exports[`accepts \`theme\` prop 1`] = `
 
 exports[`renders 1`] = `
 .emotion-0 {
-  max-width: 45em;
   text-overflow: ellipsis;
   font-size: 15px;
   line-height: 1.6;
 }
 
 <p
-  class="emotion-0 emotion-1"
+  class="emotion-0"
 >
   sample text
 </p>

@@ -8,20 +8,26 @@
     "build": "webpack",
     "cypress": "cypress open",
     "eslint": "eslint",
-    "flow": "flow check",
+    "flow": "flow",
     "lint-staged": "lint-staged",
-    "start": "webpack-dev-server",
-    "test:watch": "jest --watch",
-    "test:acceptance": "cypress run",
-    "test": "jest",
+    "precommit": "npm run lint-staged && npm test",
     "prettier":
       "prettier --arrow-parens=always --print-width=70 --single-quote --trailing-comma=all --write",
-    "precommit": "npm run lint-staged && npm run flow && npm test"
+    "start": "webpack-dev-server",
+    "test": "jest",
+    "test:acceptance": "cypress run",
+    "test:watch": "jest --watch",
+    "tslint": "tslint"
   },
   "keywords": ["react", "spa", "frontend", "js"],
   "author": "Slava Pavlutin",
   "license": "MIT",
   "dependencies": {
+    "@types/lodash": "^4.14.110",
+    "@types/node": "^10.5.0",
+    "@types/react": "^16.4.3",
+    "@types/react-dom": "^16.0.6",
+    "@types/react-router-dom": "^4.2.7",
     "axios": "^0.18.0",
     "babel-polyfill": "^6.26.0",
     "emotion": "^9.2.4",
@@ -34,9 +40,12 @@
     "react-emotion": "^9.2.4",
     "react-icons": "^2.2.7",
     "react-loadable": "^5.4.0",
-    "react-router-dom": "^4.3.1"
+    "react-router-dom": "^4.3.1",
+    "ts-loader": "^4.4.2"
   },
   "devDependencies": {
+    "@types/jest": "^23.1.2",
+    "awesome-typescript-loader": "^5.2.0",
     "babel-core": "^6.26.3",
     "babel-eslint": "^8.2.5",
     "babel-jest": "^23.2.0",
@@ -65,47 +74,54 @@
     "jest-emotion": "^9.2.4",
     "lint-staged": "^7.2.0",
     "prettier": "^1.13.6",
-    "react-testing-library": "^4.0.2",
+    "react-testing-library": "^4.1.0",
     "style-loader": "^0.21.0",
-    "webpack": "^4.12.1",
+    "ts-jest": "^22.4.6",
+    "tslint": "^5.10.0",
+    "typescript": "^2.9.2",
+    "typescript-eslint-parser": "^16.0.1",
+    "webpack": "^4.12.2",
     "webpack-cli": "^3.0.8",
     "webpack-dev-server": "^3.1.4",
     "workbox-webpack-plugin": "^3.3.0"
   },
-  "babel": {
-    "presets": ["env"],
-    "plugins": [
-      "emotion",
-      "syntax-dynamic-import",
-      "transform-class-properties",
-      "transform-flow-strip-types",
-      "transform-object-rest-spread",
-      "transform-react-jsx",
-      "transform-regenerator"
-    ]
-  },
   "jest": {
-    "setupTestFrameworkScriptFile": "./src/setupTests.js"
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ],
+    "setupTestFrameworkScriptFile": "./src/setupTests.ts",
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    }
   },
   "lint-staged": {
-    "*.{js,md,css}": ["npm run prettier --", "git add"],
-    "*.js": ["npm run eslint --"]
+    "*.{ts,tsx,js,jsx,md,css}": ["npm run prettier --", "git add"],
+    "*.{js,jsx}": ["npm run eslint --"],
+    "*.{ts,tsx}": ["npm run tslint --"]
   },
   "eslintConfig": {
-    "parser": "babel-eslint",
-    "extends": "airbnb",
-    "plugins": ["jest", "cypress"],
     "env": {
       "browser": true,
+      "cypress/globals": true,
       "jest": true,
       "node": true,
-      "worker": true,
-      "cypress/globals": true
+      "worker": true
     },
+    "extends": "airbnb",
+    "parser": "babel-eslint",
+    "plugins": ["jest", "cypress"],
     "rules": {
       "arrow-parens": [0],
       "function-paren-newline": [0],
       "implicit-arrow-linebreak": [0],
+      "import/no-extraneous-dependencies": [0],
+      "import/no-unresolved": [0],
       "no-mixed-operators": [0],
       "no-use-before-define": [0],
       "object-curly-newline": [0],

@@ -1,4 +1,3 @@
-// @flow
 import LoginPage from './LoginPage';
 import HomePage from './HomePage';
 
