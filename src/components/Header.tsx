@@ -1,20 +1,23 @@
+import { get } from 'lodash';
 import * as React from 'react';
-import styled from 'react-emotion';
+import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { theme } from '../design-system/index';
 
 function Header() {
   return (
     <Container>
-      <Logo to="/">Ré</Logo>
-      <NavLink to="/login" href="/login">
+      <Logo to="/" theme={theme}>
+        Ré
+      </Logo>
+      <NavLink to="/login" href="/login" theme={theme}>
         Login &nbsp; →
       </NavLink>{' '}
     </Container>
   );
 }
 
-const Container = styled('header')`
+const Container = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -24,14 +27,14 @@ const Container = styled('header')`
 
 const NavLink = styled(Link)`
   text-decoration: none;
-  color: ${theme.colors.text};
+  color: ${(p) => get(p, 'theme.colors.text')};
 `;
 
 const Logo = styled(Link)`
   font-size: 20px;
   font-weight: bold;
   text-decoration: none;
-  color: ${theme.colors.button};
+  color: ${(p) => get(p, 'theme.colors.button')};
 `;
 
 export default Header;

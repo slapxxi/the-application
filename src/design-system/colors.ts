@@ -2,6 +2,7 @@ const colors = {
   coralcandy: '#f3cecb',
   deluge: '#7c76a4',
   geraldine: '#fe5b55',
+  quartz: '#e3e3e5',
   grey: '#556',
   lightgrey: '#aab',
   midnightexpress: '#21263a',

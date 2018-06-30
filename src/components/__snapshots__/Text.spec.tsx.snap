@@ -1,7 +1,22 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`accepts \`theme\` prop 1`] = `
-.emotion-0 {
+.c0 {
+  text-overflow: ellipsis;
+  font-size: 15px;
+  line-height: 1.6;
+  color: hotpink;
+}
+
+<p
+  className="c0"
+>
+  sample text
+</p>
+`;
+
+exports[`renders 1`] = `
+.c0 {
   text-overflow: ellipsis;
   font-size: 15px;
   line-height: 1.6;
@@ -9,21 +24,7 @@ exports[`accepts \`theme\` prop 1`] = `
 }
 
 <p
-  class="emotion-0"
->
-  text
-</p>
-`;
-
-exports[`renders 1`] = `
-.emotion-0 {
-  text-overflow: ellipsis;
-  font-size: 15px;
-  line-height: 1.6;
-}
-
-<p
-  class="emotion-0"
+  className="c0"
 >
   sample text
 </p>

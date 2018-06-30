@@ -1,4 +1,5 @@
-import * as React from 'react';
+import React from 'react';
+import renderer from 'react-test-renderer';
 import { render } from 'react-testing-library';
 import Heading from './Heading';
 
@@ -9,13 +10,15 @@ const theme = {
 };
 
 it('renders', () => {
-  const { container } = render(<Heading>heading</Heading>);
-  expect(container.firstChild).toMatchSnapshot();
+  const component = renderer.create(<Heading />).toJSON();
+  expect(component).toMatchSnapshot();
 });
 
 it('accepts `theme` prop', () => {
-  const { container } = render(<Heading theme={theme}>text</Heading>);
-  expect(container.firstChild).toMatchSnapshot();
+  const component = renderer
+    .create(<Heading theme={theme} />)
+    .toJSON();
+  expect(component).toMatchSnapshot();
 });
 
 it('does not throw if `theme` is malformed', () => {

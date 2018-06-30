@@ -1,29 +1,30 @@
-import * as React from 'react';
+import React from 'react';
+import renderer from 'react-test-renderer';
 import { render } from 'react-testing-library';
 import Button from './Button';
 
 const theme = {
   colors: {
-    button: 'black',
-    buttonActive: 'white',
-    buttonText: 'white',
-    buttonTextActive: 'black',
+    button: 'pink',
+    buttonText: 'hotpink',
   },
 };
 
 it('renders', () => {
-  const { container } = render(<Button>button</Button>);
-  expect(container.firstChild).toMatchSnapshot();
+  const component = renderer.create(<Button />).toJSON();
+  expect(component).toMatchSnapshot();
 });
 
 it('accepts `disabled` prop', () => {
-  const { container } = render(<Button disabled>button</Button>);
-  expect(container.firstChild).toMatchSnapshot();
+  const component = renderer.create(<Button disabled />).toJSON();
+  expect(component).toMatchSnapshot();
 });
 
 it('accepts `theme` prop', () => {
-  const { container } = render(<Button theme={theme}>button</Button>);
-  expect(container.firstChild).toMatchSnapshot();
+  const component = renderer
+    .create(<Button theme={theme} />)
+    .toJSON();
+  expect(component).toMatchSnapshot();
 });
 
 it('does not throw if `theme` is malformed', () => {

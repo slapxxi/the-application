@@ -1,101 +1,107 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`accepts \`disabled\` prop 1`] = `
-.emotion-0 {
-  padding: px;
-  border: 1px solid;
+.c0 {
   border-radius: 4px;
-  font-size: px;
   font-weight: 500;
   line-height: 0;
   vertical-align: middle;
   cursor: pointer;
+  border: 1px solid black;
+  color: #fff;
+  fill: #fff;
+  padding: 6.666666666666667px;
 }
 
-.emotion-0:active {
-  -webkit-transform: translateY(1px);
-  -ms-transform: translateY(1px);
-  transform: translateY(1px);
-}
-
-.emotion-0:disabled {
-  background: lightgrey;
-  color: #bbbbbb;
+.c0:disabled {
+  background: 'lightgrey';
+  color: #bbb;
   cursor: not-allowed;
 }
 
+.c0:hover {
+  background: black;
+  color: #fff;
+}
+
+.c0:active {
+  border-color: #000;
+  background: #000;
+  color: #fff;
+}
+
 <button
-  class="emotion-0"
-  disabled=""
->
-  button
-</button>
+  className="c0"
+  disabled={true}
+/>
 `;
 
 exports[`accepts \`theme\` prop 1`] = `
-.emotion-0 {
-  padding: px;
-  border: 1px solid black;
-  background: black;
+.c0 {
   border-radius: 4px;
-  font-size: px;
   font-weight: 500;
-  color: white;
-  fill: white;
   line-height: 0;
   vertical-align: middle;
   cursor: pointer;
+  border: 1px solid pink;
+  color: #003f34;
+  fill: #003f34;
+  padding: 6.666666666666667px;
 }
 
-.emotion-0:active {
-  -webkit-transform: translateY(1px);
-  -ms-transform: translateY(1px);
-  transform: translateY(1px);
-  border-color: white;
-  background: white;
-  color: black;
-}
-
-.emotion-0:disabled {
-  background: lightgrey;
-  color: #bbbbbb;
+.c0:disabled {
+  background: 'lightgrey';
+  color: #bbb;
   cursor: not-allowed;
 }
 
+.c0:hover {
+  background: pink;
+  color: #fff;
+}
+
+.c0:active {
+  border-color: #ff8da1;
+  background: #ff8da1;
+  color: #00725e;
+}
+
 <button
-  class="emotion-0"
->
-  button
-</button>
+  className="c0"
+/>
 `;
 
 exports[`renders 1`] = `
-.emotion-0 {
-  padding: px;
-  border: 1px solid;
+.c0 {
   border-radius: 4px;
-  font-size: px;
   font-weight: 500;
   line-height: 0;
   vertical-align: middle;
   cursor: pointer;
+  border: 1px solid black;
+  color: #fff;
+  fill: #fff;
+  padding: 6.666666666666667px;
 }
 
-.emotion-0:active {
-  -webkit-transform: translateY(1px);
-  -ms-transform: translateY(1px);
-  transform: translateY(1px);
-}
-
-.emotion-0:disabled {
-  background: lightgrey;
-  color: #bbbbbb;
+.c0:disabled {
+  background: 'lightgrey';
+  color: #bbb;
   cursor: not-allowed;
 }
 
+.c0:hover {
+  background: black;
+  color: #fff;
+}
+
+.c0:active {
+  border-color: #000;
+  background: #000;
+  color: #fff;
+}
+
 <button
-  class="emotion-0"
->
-  button
-</button>
+  className="c0"
+/>
 `;

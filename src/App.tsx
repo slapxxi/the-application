@@ -1,12 +1,12 @@
 import * as React from 'react';
-import styled from 'react-emotion';
+import styled from 'styled-components';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import { Header } from './components/index';
-import { HomePage, LoginPage } from './pages/index';
-import { Theme } from './context/index';
-import { theme } from './design-system/index';
+import { Header } from './components';
+import { HomePage, LoginPage } from './pages';
+import { Theme } from './context';
+import { theme } from './design-system';
 
-class App extends React.Component<any, any> {
+class App extends React.Component<{}, {}> {
   public render() {
     return (
       <Theme.Provider value={theme}>
@@ -22,7 +22,7 @@ class App extends React.Component<any, any> {
   }
 }
 
-const Container = styled('div')`
+const Container = styled.div`
   padding: 20px;
 `;
 

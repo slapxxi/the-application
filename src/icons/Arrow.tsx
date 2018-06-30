@@ -18,7 +18,7 @@ function Arrow({ size = 16, direction = 'down' }: Props) {
   );
 }
 
-function directionToTransform(direction) {
+function directionToTransform(direction: Props['direction']) {
   switch (direction) {
     case 'up':
       return 'rotate(180, 50, 50)';

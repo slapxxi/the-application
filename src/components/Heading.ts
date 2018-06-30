@@ -1,5 +1,5 @@
 import * as _ from 'lodash';
-import styled from 'react-emotion';
+import styled from 'styled-components';
 
 const Heading = styled('h1')`
   font-family: Roboto Slab, serif;

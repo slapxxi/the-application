@@ -47,6 +47,8 @@
     "no-use-before-declare": false,
     "no-var-keyword": true,
     "no-var-requires": false,
+    "object-literal-key-quotes": false,
+    "object-literal-sort-keys": false,
     "one-line": [
       true,
       "check-open-brace",

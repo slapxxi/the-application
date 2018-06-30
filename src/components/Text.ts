@@ -1,11 +1,15 @@
-import * as _ from 'lodash';
-import styled from 'react-emotion';
+import { get } from 'lodash';
+import styled from 'styled-components';
 
-const Text = styled('p')`
+const Text = styled.p`
   text-overflow: ellipsis;
   font-size: 15px;
   line-height: 1.6;
-  color: ${(p) => _.get(p, 'theme.colors.text')};
+
+  ${({ theme }) => {
+    const color = get(theme, 'colors.text', 'black');
+    return { color };
+  }};
 `;
 
 export default Text;

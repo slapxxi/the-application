@@ -1,31 +1,42 @@
-import * as _ from 'lodash';
-import styled from 'react-emotion';
+import { get } from 'lodash';
+import { darken, invert, lighten } from 'polished';
+import { px } from '../lib';
+import styled from 'styled-components';
 
-const Button = styled('button')`
-  padding: ${(p) => _.get(p, 'theme.sizes.padding')}px;
-  border: 1px solid ${(p) => _.get(p, 'theme.colors.button')};
-  background: ${(p) => _.get(p, 'theme.colors.button')};
+const Button = styled.button`
   border-radius: 4px;
-  font-size: ${(p) => _.get(p, 'theme.sizes.text')}px;
   font-weight: 500;
-  color: ${(p) => _.get(p, 'theme.colors.buttonText')};
-  fill: ${(p) => _.get(p, 'theme.colors.buttonText')};
   line-height: 0;
   vertical-align: middle;
   cursor: pointer;
 
-  &:active {
-    transform: translateY(1px);
-    border-color: ${(p) => _.get(p, 'theme.colors.buttonActive')};
-    background: ${(p) => _.get(p, 'theme.colors.buttonActive')};
-    color: ${(p) => _.get(p, 'theme.colors.buttonTextActive')};
-  }
-
   &:disabled {
-    background: lightgrey;
-    color: #bbbbbb;
+    background: 'lightgrey';
+    color: #bbb;
     cursor: not-allowed;
   }
+
+  ${({ theme }) => {
+    const font = get(theme, 'sizes.text');
+    const padding = get(theme, 'sizes.padding', 10) / 1.5;
+    const background = get(theme, 'colors.button', 'black');
+    return {
+      border: `1px solid ${background}`,
+      color: invert(background),
+      fill: invert(background),
+      fontSize: px(font),
+      padding: px(padding),
+      '&:hover': {
+        background,
+        color: lighten(0.9, invert(background)),
+      },
+      '&:active': {
+        borderColor: darken(0.1, background),
+        background: darken(0.1, background),
+        color: lighten(0.1, invert(background)),
+      },
+    };
+  }};
 `;
 
 export default Button;

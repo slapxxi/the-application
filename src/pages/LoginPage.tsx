@@ -1,16 +1,14 @@
 import * as React from 'react';
-import { Heading, PassProps, Text } from '../components/index';
-import { Theme } from '../context/index';
+import { Heading, Text } from '../components';
+import { Theme } from '../context';
 
 function LoginPage() {
   return (
     <Theme.Consumer>
       {(theme) => (
         <div>
-          <PassProps theme={theme}>
-            <Heading>Login</Heading>
-            <Text>Sign in into your account.</Text>
-          </PassProps>
+          <Heading theme={theme}>Login</Heading>
+          <Text theme={theme}>Sign in into your account.</Text>
         </div>
       )}
     </Theme.Consumer>
